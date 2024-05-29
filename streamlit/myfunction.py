@@ -1,4 +1,4 @@
-def is_user(id_in, password) :
+def is_user(id_in, password="sign_up") :
     f = open("user_info.txt", "r") 
     lines = f.readlines()
     for line in lines : 
@@ -7,7 +7,9 @@ def is_user(id_in, password) :
         password_info = user_info[1]
         if (id_in==id_info) :
             if (password==password_info) :
-                return True 
+                f.close()
+                return True
+    f.close()    
     return False
 
 def sign_up(id_in, password) :

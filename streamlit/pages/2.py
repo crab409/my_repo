@@ -18,12 +18,12 @@ if streamlit.session_state.login :
         if "q1" not in streamlit.session_state :
             if question == answer2 :
                 streamlit.session_state.score += 2.6 
-                streamlit.session_state.q1 = True
+                streamlit.session_state.q2 = True
                 streamlit.success("정답입니다!")
 
             else :
                 streamlit.warning("오답입니다!")
-                streamlit.session_state.q1 = False
+                streamlit.session_state.q2 = False
         
         else : 
             streamlit.warning("이미 제출한 답은 변경할 수 없습니다.")
