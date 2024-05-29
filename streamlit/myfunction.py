@@ -1,6 +1,7 @@
 def is_user(id_in, password="sign_up") :
     f = open("user_info.txt", "r") 
     lines = f.readlines()
+    lines.reverse()
     for line in lines : 
         user_info = line.strip().split(',')
         id_info = user_info[0]
@@ -12,14 +13,8 @@ def is_user(id_in, password="sign_up") :
     f.close()    
     return False
 
-def sign_up(id_in, password) :
-    if (is_user(id_in, password)) :
-        return 1
-    else :
-        try :
-            f = open("user_info.txt", 'a')
-            data = f"{id_in},{password}\n"
-            f.write(data)
-            return 0
-        except :
-            return -1
+def sign_up(id_in, password, email) :
+    f = open("user_info.txt", 'a') 
+    data = f"{id_in},{password},{email}\n"
+    f.write(data)
+    f.close()
