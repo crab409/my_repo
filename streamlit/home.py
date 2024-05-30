@@ -8,7 +8,6 @@ login_tab, signup_tab = streamlit.tabs(["LOG IN","SIGN UP"])
 
 
 
-
 with login_tab :
     streamlit.title("log in page")
 
@@ -22,7 +21,6 @@ with login_tab :
 
         else :
             streamlit.warning("Something is wroge! Try again!")
-
 
 
 
